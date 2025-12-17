@@ -38,7 +38,9 @@ The **20 Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups), a collectio
 1. **Text Cleaning:** Removed headers, footers, and quotes.
 2. **Feature Extraction (Traditional ML):**
    - TF-IDF vectorization with 5,000 features (unigrams and bigrams).
+     - TF-IDF stands for Term Frequency-Inverse Document Frequency. It's a statistical measure that evaluates how important a word is to a document in a collection or corpus. Words that appear frequently in a document but rarely in other documents get high scores. Common words ("the", "and", "is") get low scores because they appear everywhere
    - Chi-squared feature selection (top 1,000 features).
+     - It's a statistical test that measures the dependence between a feature and the class label. Features that are highly dependent on the class are selected. If a word appears much more frequently in one category than others, it's probably important for classification.
 3. **Neural Network Preparation:**
    - Tokenization with a vocabulary size of 10,000.
    - Sequence padding/truncation to 500 tokens.
@@ -52,7 +54,7 @@ The **20 Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups), a collectio
 1. **Support Vector Machine (SVM)**
    - Kernel: Linear
    - Hyperparameter Tuning (GridSearchCV):
-     - Regularization (`C`): [0.1, 1, 10, 100]
+     - Regularization (`C`): [0.1, 1, 10, 100]. Trying out different C's. Higher C means more prone to overfitting and vice versa.
      - Class weight: [None, 'balanced']
    - Cross-validation: Stratified 5-fold
 
@@ -128,7 +130,5 @@ The **20 Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups), a collectio
 ---
 
 ## References
-3. 20 Newsgroups Dataset. http://qwone.com/~jason/20Newsgroups/
-4. Géron, A. *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow*. O’Reilly, 2019.
-
----
+1. 20 Newsgroups Dataset. http://qwone.com/~jason/20Newsgroups/
+2. Géron, A. *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow*. O'Reilly, 2019.
