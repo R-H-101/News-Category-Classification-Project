@@ -1,10 +1,7 @@
 # Newsgroups Text Classification: Traditional ML vs. Neural Networks
 
 ## Details
-- **Course:** Machine Learning 
-- **Name:** Syed Raahem Haamer - 510552  
-- **Date:** December 17, 2025  
-
+- **Name:** Syed Raahem Haamer - 510552  - BEE16D
 ---
 
 ## Abstract
