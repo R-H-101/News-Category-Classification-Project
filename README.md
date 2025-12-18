@@ -26,7 +26,7 @@ Text classification is a fundamental task in natural language processing (NLP) w
 
 ## Dataset Description
 ### Source
-The **20 Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups), a collection of approximately 18,000 newsgroup posts across 20 topics.
+The **Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups)
 
 ### Subset Used
 - **Categories (6):** `comp.graphics`, `rec.autos`, `rec.motorcycles`, `sci.crypt`, `sci.electronics`, `sci.space`
