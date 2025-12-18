@@ -1,6 +1,6 @@
 # Newsgroups Text Classification: Traditional ML vs. Neural Networks
 
-## Project Team
+## Details
 - **Course:** Machine Learning 
 - **Name:** Syed Raahem Haamer - 510552  
 - **Date:** December 17, 2025  
@@ -8,7 +8,7 @@
 ---
 
 ## Abstract
-This project compares the performance of traditional machine learning models (Support Vector Machine and Random Forest) with a dense neural network for multi-class text classification on the **20 Newsgroups dataset**. The goal is to categorize news articles into six topics: `comp.graphics`, `rec.autos`, `rec.motorcycles`, `sci.crypt`, `sci.electronics`, and `sci.space`. Key findings indicate that the neural network achieves the highest F1-score (0.8036), while SVM offers the best trade-off between speed and performance. The study includes detailed feature analysis, embedding visualizations, and practical recommendations for model selection.
+This project compares the performance of traditional machine learning models (Support Vector Machine and Random Forest) with a dense neural network for multi-class text classification on the **20 Newsgroups dataset**. The goal is to categorize news articles into six topics: `comp.graphics`, `rec.autos`, `rec.motorcycles`, `sci.crypt`, `sci.electronics`, and `sci.space`. Key findings indicate that the neural network achieves the highest F1-score (0.8036), while SVM offers the best trade-off between speed and performance. The study includes detailed feature analysis, embedding, and practical recommendations for model selection.
 
 ---
 
@@ -71,7 +71,7 @@ The **20 Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups), a collectio
 - **Model Type:** Dense Neural Network with Embedding
 - **Architecture:**
   - Embedding Layer (10,000 vocab → 128-dim)
-  - Global Average Pooling
+  - Global Average Poolingn (for parameter reduction)
   - Dense Layers: 256 → 128 → 64 (ReLU, BatchNorm, Dropout)
   - Output Layer: 6 units (Softmax)
 - **Regularization:** L2 regularization, Dropout (0.3–0.5)
@@ -79,7 +79,7 @@ The **20 Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups), a collectio
 - **Callbacks:** Early Stopping, ReduceLROnPlateau
 
 ### Hyperparameter Tuning Strategies
-- **GridSearchCV** for SVM and Random Forest (exhaustive search over parameter grids).
+- **GridSearchCV** for SVM and Random Forest (exhaustive search over parameter grids for finding the optimal hyperparameters).
 - **Stratified K-Fold Cross-Validation** (5 folds) to ensure representative validation.
 - **Early Stopping** and **Learning Rate Reduction** for neural network training.
 
