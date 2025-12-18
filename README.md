@@ -52,31 +52,30 @@ The **20 Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups), a collectio
 
 ### Classical Machine Learning Approaches
 1. **Support Vector Machine (SVM)**
-   - Kernel: Linear
-   - Hyperparameter Tuning (GridSearchCV):
-     - Regularization (`C`): [0.1, 1, 10, 100]. Trying out different C's. Higher C means more prone to overfitting and vice versa.
-     - Class weight: [None, 'balanced']
-   - Cross-validation: Stratified 5-fold
+   - Kernel: Linear (Transforms data to find a boundary between classes)
+   - Hyperparameter Tuning (GridSearchCV) (Builds a grid of every possible combination of settings listed and tests them all to find the winner)
+     - Regularization (`C`): [0.1, 1, 10, 100]. Higher C means more prone to overfitting and vice versa.
+   - Cross-validation: Stratified 5-fold (Train on 4 and test on 1, repeating this 5 times).
 
 2. **Random Forest**
    - Hyperparameter Tuning (GridSearchCV):
-     - `n_estimators`: [100, 200]
+     - `n_estimators`: [100, 200] (Number of trees in the forest)
      - `max_depth`: [None, 50, 100]
-     - `min_samples_split`: [2, 5, 10]
+     - `min_samples_split`: [2, 5, 10] (Minimum number of samples required to split an internal node)
      - `max_features`: ['sqrt', 'log2']
      - Class weight: [None, 'balanced']
-   - Cross-validation: Stratified 5-fold
+   - Cross-validation: Stratified 5-fold (Train on 4 and test on 1, repeating this 5 times).
 
 ### Deep Learning Architecture
 - **Model Type:** Dense Neural Network with Embedding
 - **Architecture:**
   - Embedding Layer (10,000 vocab → 128-dim)
-  - Global Average Poolingn (for parameter reduction)
+  - Global Average Pooling (for parameter reduction)
   - Dense Layers: 256 → 128 → 64 (ReLU, BatchNorm, Dropout)
   - Output Layer: 6 units (Softmax)
 - **Regularization:** L2 regularization, Dropout (0.3–0.5)
 - **Optimizer:** Adam (LR=0.001)
-- **Callbacks:** Early Stopping, ReduceLROnPlateau
+- **Callbacks:** Early Stopping, ReduceLROnPlateau (Reduce Learning Rate on Plateau).
 
 ### Hyperparameter Tuning Strategies
 - **GridSearchCV** for SVM and Random Forest (exhaustive search over parameter grids for finding the optimal hyperparameters).
@@ -110,7 +109,7 @@ The **20 Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups), a collectio
 
 ### Visualization Highlights
 1. **Accuracy/F1 Comparison:** Neural Network leads in both metrics.
-2. **Training Time:** SVM is significantly faster than Random Forest; Neural Network is moderately slower than SVM.
+2. **Training Time:** SVM is significantly faster than Random Forest; Neural Network is slightly slower than SVM.
 3. **Embedding Analysis:** Words like `computer` are close to `graphics` and `3d`; `car` is associated with `auto` and `toyota`.
 4. **Model Ranking:** Neural Network ranked first in combined score (accuracy 40% + F1 40% + speed 20%).
 
@@ -122,8 +121,7 @@ The **20 Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups), a collectio
 - Traditional ML models remain competitive and may be preferred in resource-constrained or interpretability-focused scenarios.
 
 ### Future Work
-1. **Advanced Architectures:** Experiment with LSTMs, Transformers, or pre-trained embeddings (BERT, GPT).
-2. **Extended Dataset:** Include all 20 newsgroups categories for a more challenging task.
+1. **Advanced Architectures:** Can Experiment Transformers, or pre-trained embeddings (BERT, GPT).
 3. **Hyperparameter Optimization:** Use Bayesian Optimization or Hyperband for more efficient tuning.
 4. **Deployment Pipeline:** Build an end-to-end API for real-time news classification.
 
