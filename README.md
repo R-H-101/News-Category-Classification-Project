@@ -5,7 +5,7 @@
 ---
 
 ## Abstract
-This project compares the performance of traditional machine learning models (Support Vector Machine and Random Forest) with a dense neural network for multi-class text classification on the **20 Newsgroups dataset**. The goal is to categorize news articles into six topics: `comp.graphics`, `rec.autos`, `rec.motorcycles`, `sci.crypt`, `sci.electronics`, and `sci.space`. Key findings indicate that the neural network achieves the highest F1-score (0.8036), while SVM offers the best trade-off between speed and performance. The study includes detailed feature analysis, embedding, and practical recommendations for model selection.
+This project compares the performance of traditional machine learning models (Support Vector Machine and Random Forest) with a dense neural network for multi-class text classification on the **Newsgroups dataset**. The goal is to categorize news articles into six topics: `comp.graphics`, `rec.autos`, `rec.motorcycles`, `sci.crypt`, `sci.electronics`, and `sci.space`. Key findings indicate that the neural network achieves the highest F1-score (0.8036), while SVM offers the best trade-off between speed and performance. The study includes detailed feature analysis, embedding, and practical recommendations for model selection.
 
 ---
 
