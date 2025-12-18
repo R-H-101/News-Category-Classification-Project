@@ -36,7 +36,7 @@ The **Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups)
 2. **Feature Extraction (Traditional ML):**
    - TF-IDF vectorization with 5,000 features (unigrams and bigrams).
      - TF-IDF stands for Term Frequency-Inverse Document Frequency. It's a statistical measure that evaluates how important a word is to a document in a collection or corpus. Words that appear frequently in a document but rarely in other documents get high scores. Common words ("the", "and", "is") get low scores because they appear everywhere. Also creates document embeddings.
-     - TF = (Total number of terms in document d( / (Number of times term t appears in document d)
+     - TF = ( (Number of times term t appears in document d) / Total number of terms in document d)
      - IDF = log(Number of documents containing term t / Total number of documents in corpus D)
      - TF-IDF(t,d,D)=TF(t,d) × IDF(t,D)
    - Chi-squared feature selection (top 1,000 features).
