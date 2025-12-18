@@ -38,9 +38,21 @@ The **20 Newsgroups dataset** (sklearn.datasets.fetch_20newsgroups), a collectio
 1. **Text Cleaning:** Removed headers, footers, and quotes.
 2. **Feature Extraction (Traditional ML):**
    - TF-IDF vectorization with 5,000 features (unigrams and bigrams).
-     - TF-IDF stands for Term Frequency-Inverse Document Frequency. It's a statistical measure that evaluates how important a word is to a document in a collection or corpus. Words that appear frequently in a document but rarely in other documents get high scores. Common words ("the", "and", "is") get low scores because they appear everywhere
+     - TF-IDF stands for Term Frequency-Inverse Document Frequency. It's a statistical measure that evaluates how important a word is to a document in a collection or corpus. Words that appear frequently in a document but rarely in other documents get high scores. Common words ("the", "and", "is") get low scores because they appear everywhere. Also creates document embeddings.
+     - TF = (Total number of terms in document d( / (Number of times term t appears in document d)
+     - IDF = log(Number of documents containing term t / Total number of documents in corpus D)
+     - TF-IDF(t,d,D)=TF(t,d) × IDF(t,D)
    - Chi-squared feature selection (top 1,000 features).
      - It's a statistical test that measures the dependence between a feature and the class label. Features that are highly dependent on the class are selected. If a word appears much more frequently in one category than others, it's probably important for classification.
+     - Sum_of ((O-E)^2/E)
+     - O = Observed frequency (actual counts: A, B, C, D)
+     - E = Expected frequency (if feature and class were independent)
+     - Feature Selection Process:
+          - Compute χ² score for each term against each class.
+          - For multi-class: Use one-vs-rest approach or aggregate scores.
+          - Select top-k terms with highest χ² scores as features.
+          - Use these selected features to train your model.
+            
 3. **Neural Network Preparation:**
    - Tokenization with a vocabulary size of 10,000.
    - Sequence padding/truncation to 500 tokens.
